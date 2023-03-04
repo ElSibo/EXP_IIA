@@ -1,5 +1,10 @@
 # EXP_IIA
-This is the second assignment for experimental robotics
+This is the second assignment for experimental robotics that develop the first assigment of EXPLAB to integrate it in a simulation with Gazebo.
+
+ <p align="center">
+ 
+  <img src="images/Schermata 2023-03-04 alle 23.47.35.png" width="1000" title="hover text">
+</p>
 
 
 ## 1) -Brief Introduction:
@@ -45,7 +50,10 @@ Then we added a part where the robot rotates to scan the room.
 
 The following diagram shows the software architecture of our assignment and how the various modules communicate with each other.
 
------- image --------
+<p align="center">
+ 
+  <img src="images/Schermata 2023-03-04 alle 23.35.35.png" width="700" title="hover text">
+</p>
 
 Let us now describe the communication channels between the various modules:
 
@@ -70,7 +78,7 @@ Let us now describe the communication channels between the various modules:
 
 <p align="center">
  
-  <img src="Diagrams_Pictures/Schermata 2022-11-27 alle 18.36.33.png" width="750" title="hover text">
+  <img src="images/Schermata 2023-03-04 alle 21.48.48.png" width="750" title="hover text">
 </p>
 
 The time diagram is very important in this project to understand how the assigment works, because it shows how communication occurs between the various nodes in real time and how they should be synchronized.
@@ -86,7 +94,7 @@ We can explain the time diagram in two steps:
 
 <p align="center">
  
-  <img src="Diagrams_Pictures/Schermata 2022-11-28 alle 00.05.44.png" width="950" title="hover text">
+  <img src="images/Schermata 2023-03-04 alle 23.37.11.png" width="950" title="hover text">
 </p>
 
 This diagram shows the schematic of the finite state machine, the states it is composed of, and how the transition from one state to another takes place.

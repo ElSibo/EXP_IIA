@@ -169,7 +169,7 @@ rosrun assignment2 SM_assigment2.py
 ## 4) -Video about assigment:
 this video show how the state machine work and the simulation of the robot.
 
-#### link:
+#### link: https://youtu.be/8DRjsnz7DGs
 
 ## 5) -Working hypothesis and environment:
 

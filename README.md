@@ -26,6 +26,11 @@ Our tasks will be as follows:
 3)- Start the patrolling algorithm by relying on the autonomous navigation strategies (mapping/planning) and the information collected and stored in the ontology during the previous phase.                                                                
 4)- When a room is reached, perform a full scan of the room (by rotating the base or camera).
 
+<p align="center">
+ 
+  <img src="images/Schermata 2023-03-05 alle 16.38.43.png" width="950" title="hover text">
+</p>
+
 #### What we did for this assigment:
 
 we created a model of the robot (starting from an already made one that we then specially modified) we equipped the robot with a manipulator consisting of a continuous joint,three revolute joints,two prismatic joints; where the end-effector contained the camera, plus we added a laserscan at the head of the robot all this in the .xarco file, we added the controllers of the dei joint and the pluin of the camera and laser in the .gazeo file.
@@ -78,8 +83,9 @@ Let us now describe the communication channels between the various modules:
 
 <p align="center">
  
-  <img src="images/Schermata 2023-03-04 alle 21.48.48.png" width="750" title="hover text">
+  <img src="images/Schermata 2023-03-05 alle 11.22.50.png" width="700" title="hover text">
 </p>
+
 
 The time diagram is very important in this project to understand how the assigment works, because it shows how communication occurs between the various nodes in real time and how they should be synchronized.
 
@@ -100,6 +106,14 @@ We can explain the time diagram in two steps:
 This diagram shows the schematic of the finite state machine, the states it is composed of, and how the transition from one state to another takes place.
 
 The finite state machine consists of a Planner Action state (which decides what state to go to), you exit the state with 'go_R1'(to go to room R1), 'go_R2'(to go to room R2), 'go_R3'(to go to room R3), 'go_R4'(to go to room R4)and with 'Urgent'(to go to Urgency), you enter the state with 'go_plan'; in the Robot_Move_to_Rx state you exit with 'go_plan' and enter with 'go_Rx'(Rx represents the individual rooms R1,R2,R3,R4); nthe URGENCY state you exit with 'go_plan and enter with 'Urgent'.
+
+we can see also how the node in ros are worked when the state machine worked:
+images/Schermata 2023-03-03 alle 16.29.35.png
+
+<p align="center">
+ 
+  <img src="images/Schermata 2023-03-03 alle 16.29.35.png" width="950" title="hover text">
+</p>
 
 ## 3) -Installation and Running procedure:
 
@@ -157,5 +171,23 @@ this video show how the state machine work and the simulation of the robot.
 
 #### link:
 
+## 5) -Working hypothesis and environment:
 
+### System’s features:
+
+The characteristics of this system is more complex than those of the previous assignment in that an attempt is made to integrate the previous system (which only simulated the operation of a pathrolling robot on a theoretical level) with a simulator that approximates real behavior quite closely.
+Generally in this system we have continuous communication with the state machine (SM_assignment2.py) that decides the robot's actions. The actions to be performed by the robot are executed by move_base and are reproduced by the gazebo simulator. The state machine decides the actions of the robot in relation to the information it receives from the resoner armor. 
+
+### System’s limitations and Possible technical Improvements:
+
+The main limitations of the system are firstly the robot's movement is quite slow and the robot's path in the environment is not very optimized; this is mainly due to the move_base node which can be improved to achieve a faster trajectory that is more compliant with the route to be taken.
+Another point where we can work is to send the robot to a point near the room entrance where it can scan the room but without having to take a longer route.
+We can also use armor as a planer to decide what state to send the robot to using rules defined in the ontology map, this choice may not seem very useful for a simple project, but in case of a more complex project where it has to take into account many variables to plan the movement it would be very useful to use a resoner.
+We can then add an enhancement by tying the battery level to the robot's movement and elapsed time.
+ 
+## 6) -Authors and Contacts:
+
+#### Authors: Bouazza El Moutaouakil 
+#### github: https://github.com/ElSibo
+#### contacts: siboasa@gmail.com
 
